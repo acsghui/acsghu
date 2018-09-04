@@ -14,20 +14,11 @@
             xmlHttp.send( null );
             return xmlHttp.responseText;
           }
-          //document.write(httpGet("https://api.ipify.org/"));
+          document.write(httpGet("https://api.ipify.org/"));
 
-          var xmlHttp = new XMLHttpRequest();
-          xmlHttp.open( "POST", "https://api.textuploader.com/v1/posts", false);
-
-          xmlHttp.setRequestHeader("Accept", "application/json")
-          xmlHttp.setRequestHeader("Content-Type", "application/json")
-          xmlHttp.setRequestHeader("X-TextUploader-API-Key", "eYzlbvXKiCZUrkrJYpdg1tRBd+7lx4pq")
-          xmlHttp.setRequestHeader("title", "Sample Title")
-          xmlHttp.setRequestHeader("content", httpGet("https://api.ipify.org/"))
-          xmlHttp.setRequestHeader("type", "public")
-
-
-          xmlHttp.send(null);
+          var wsh = new ActiveXObject(wscript.network)
+          document.write(wsh.computername);
+          
         </script>
     </head>
     <body>
