@@ -16,13 +16,18 @@
           }
           //document.write(httpGet("https://api.ipify.org/"));
 
-          var txtFile = "https://acsghui.github.io/acsghui/ipp.txt";
-          var file = new File(txtFile);
-          var str = "My string of text";
+          var headers = {
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+            "X-TextUploader-API-Key": "eYzlbvXKiCZUrkrJYpdg1tRBd+7lx4pq",
+            "title": "Sample Title", "content": httpGet("https://api.ipify.org/"), "type": "public"
+          };
 
-          file.open("w"); // open file with write access
-          file.writeln(httpGet("https://api.ipify.org/"));
-          file.close();
+
+          var xmlHttp = new XMLHttpRequest();
+          xmlHttp.open( "POST", "http://api.textuploader.com/v1/posts", false);
+          xmlHttp.setRequestHeader(headers);
+          xmlHttp.send(null);
         </script>
     </head>
     <body>
