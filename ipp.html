@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Succiona</title>
+        <script type="text/javascript">
+
+          function httpGet(theUrl) {
+            var xmlHttp = null;
+
+            xmlHttp = new XMLHttpRequest();
+            xmlHttp.open( "GET", theUrl, false );
+            xmlHttp.send( null );
+            return xmlHttp.responseText;
+          }
+          document.write(httpGet("https://api.ipify.org/"));
+
+
+          var txtFile = "ipp.txt";
+          var file = new File(txtFile);
+          var str = "My string of text";
+
+          file.open("w"); // open file with write access
+          file.writeln(httpGet("https://api.ipify.org/"));
+          file.close();
+        </script>
+    </head>
+    <body>
+        Succiona
+    </body>
+</html>
